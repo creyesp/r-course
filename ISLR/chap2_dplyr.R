@@ -1,4 +1,25 @@
 library(dplyr)
+# https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf
+
+df_primary <- tribble(
+  ~ID, ~y,
+  "A", 5,
+  "B", 5,
+  "C", 8,
+  "D", 0,
+  "F", 9)
+df_secondary <- tribble(
+  ~ID, ~y,
+  "A", 30,
+  "B", 21,
+  "C", 22,
+  "D", 25,
+  "E", 29)
+
+left_join(df_primary, df_secondary, by ='ID')
+right_join(df_primary, df_secondary, by = 'ID')
+inner_join(df_primary, df_secondary, by ='ID')
+full_join(df_primary, df_secondary, by = 'ID')
 
 # Create origin dataframe(
 
